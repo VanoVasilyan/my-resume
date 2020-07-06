@@ -1,26 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './Components/Header';
+import Body from './Components/Body';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			content: [
+				{
+					type: 'EDUCATION',
+					textContent: 'Learned Web Programming : 2020'
+				},
+				{
+					type: 'WORK EXPERIENCE',
+					textContent: 'ZigZag'
+				},
+				{
+					type: 'ABOUT ME',
+					textContent:
+						'Hello! I’m Vanik Vasilyan. I am 22 years old. I am interested in programming, I have knowledge of the JavaScript language. I am a hard-worker, I like to achieve my goals.'
+				},
+				{
+					type: 'SKILLS',
+					textContent:
+						'HTML/CSS, JavaScript(ES6), OOP/ FP, Adobe Photoshop, GIT'
+				},
+				{
+					type: 'LANGUAGES ',
+					textContent: 'Russian, English'
+				},
+				{
+					type: 'INTERESTS',
+					textContent: 'Films,books,Music,Programming'
+				}
+			],
+			contact: {
+				mail: 'vanovasilyan@gmail.com',
+				phone: '+37494470618',
+				address: 'Armenia,Yerevan Avanesov str. 7/33',
+				facebook: 'https://www.facebook.com/Vano.Vasilyan',
+				gitHub: 'https://github.com/VanoVasilyan'
+			}
+		};
+	}
+
+	render() {
+		return (
+			<div className='App'>
+				<Header />
+				<Body content={this.state.content} contact={this.state.contact} />
+			</div>
+		);
+	}
 }
 
 export default App;
