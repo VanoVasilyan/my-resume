@@ -2,12 +2,13 @@ import React from 'react';
 import './App.scss';
 import Header from './Components/Header';
 import Body from './Components/Body';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			content: [
+			aboutUserData: [
 				{
 					type: 'EDUCATION',
 					textContent: 'Learned Web Programming : 2020'
@@ -46,10 +47,11 @@ class App extends React.Component {
 	}
 
 	render() {
+		const { aboutUserData, contact } = this.state;
 		return (
 			<div className='App'>
 				<Header />
-				<Body content={this.state.content} contact={this.state.contact} />
+				<Body aboutUserData={aboutUserData} contact={contact} />
 			</div>
 		);
 	}

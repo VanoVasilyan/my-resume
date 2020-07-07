@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<div className='mainHead'>
 			<div className='img'>
-				<img src={img}></img>
+				<img alt='' src={img}></img>
 			</div>
 			<div className='name'> VANIK VASILYAN </div>
 		</div>

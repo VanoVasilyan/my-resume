@@ -1,17 +1,12 @@
 import React from 'react';
 import OtherItem from './OterItem';
 
-const Other = ({ content }) => {
+const Other = ({ aboutUserData }) => {
 	return (
 		<div className='other'>
-			{content.map((el) => {
-				return (
-					<OtherItem
-						type={el.type}
-						key={el.type}
-						textContent={el.textContent}
-					/>
-				);
+			{aboutUserData.map((userDataItem) => {
+				const { type, textContent } = userDataItem;
+				return <OtherItem type={type} key={type} textContent={textContent} />;
 			})}
 		</div>
 	);

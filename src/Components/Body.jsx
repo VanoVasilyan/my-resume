@@ -2,11 +2,11 @@ import React from 'react';
 import Contact from './Contact';
 import Other from './Other';
 
-const Body = ({ content, contact }) => {
+const Body = ({ aboutUserData, contact }) => {
 	return (
 		<div className='body'>
 			<Contact contact={contact} />
-			<Other content={content} />
+			<Other aboutUserData={aboutUserData} />
 		</div>
 	);
 };

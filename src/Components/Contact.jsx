@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 const Contact = ({ contact }) => {
 	return (
@@ -6,7 +7,7 @@ const Contact = ({ contact }) => {
 			<div className='type'>Contacts</div>
 			<p>Email: {contact.mail}</p>
 			<p>Phone: {contact.phone}</p>
-			<p>Address: {contact.address}</p>
+			<p>Address: {!_.isEmpty(contact) && contact.address}</p>
 			<p>
 				<a href={contact.facebook}>Facebook</a>
 			</p>
